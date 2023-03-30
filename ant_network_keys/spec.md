@@ -27,5 +27,3 @@ the most significant byte is formed by combining several expressions using a or 
 - the second expression takes the 3rd and the 4th bytes of the key, xor them together, and applies a mask of value 0xc0 using an and bitwise operator
 - the third expression takes the 3rd byte of the key and applies a mask of value 0x13 using an and bitwise operator
 - the fourth expression takes the 3rd, the 4th, the 5th and the 6th bytes of the key, xor them together, and applies a mask of value 0x24 using an and bitwise operator
-:w
-- 
