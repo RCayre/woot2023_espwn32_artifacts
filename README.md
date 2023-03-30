@@ -1,5 +1,7 @@
 # ESPwn32: Hacking with ESP32 System-on-Chips
 
+[![DOI](https://zenodo.org/badge/621285507.svg)](https://zenodo.org/badge/latestdoi/621285507)
+
 This repository contains the artifacts used by the paper "ESPwn32: Hacking with ESP32 System-on-Chips" submitted and accepted at WOOT'23.
 
 ## Artifacts overview
