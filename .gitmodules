@@ -1,0 +1,3 @@
+[submodule "hackwatch"]
+	path = hackwatch
+	url = https://github.com/virtualabs/hackwatch
