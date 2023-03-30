@@ -3,6 +3,15 @@
 #include "nvs_flash.h"
 #include "esperanto.h"
 
+/*
+* This example demonstrates the scanning of ANT+ packets from ESP32, ESP32C3 and ESP32S3.
+*
+* It applies various filters to keep packets matching the Heart Rate Monitor device type,
+* and displays the candidate device numbers.
+*
+*/
+
+
 /* ANT+ protocol specific constants */
 #define ANT_PLUS_PREAMBLE                 (0xa6c5)
 #define HEART_RATE_MONITOR_DEVICE_TYPE    (0x78)
@@ -11,7 +20,9 @@
 
 void ant_scan_callback(uint8_t *packet,size_t size, int8_t rssi, int frequency) {
   /* ANT+ scan reception callback. */
+    // Check the rssi and the packet size
     if (rssi > -90 && size >= 7) {
+      // Check the device type
       if (packet[6] == HEART_RATE_MONITOR_DEVICE_TYPE) {
         esp_rom_printf("[frequency=%d, rssi=%d] Candidate device number: ", frequency,rssi);
         for (int i=4;i<6;i++) {

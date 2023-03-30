@@ -3,6 +3,15 @@
 #include "nvs_flash.h"
 #include "esperanto.h"
 
+/*
+* This example demonstrates the transmission of ANT+ packets from ESP32, ESP32C3 and ESP32S3.
+* It imitates an ANT+ Heart Rate Monitor device.
+*
+* By default, it matches communications with 0xe81e as device number.
+* You can refer to the ant_scan example if you don't know the device number of the communication.
+*/
+
+
 /* ANT+ specific constants. */
 #define ANT_PLUS_PREAMBLE                 (0xa6c5)
 #define HEART_RATE_MONITOR_DEVICE_TYPE    (0x78)

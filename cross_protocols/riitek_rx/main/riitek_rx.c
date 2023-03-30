@@ -3,6 +3,12 @@
 #include "nvs_flash.h"
 #include "esperanto.h"
 
+
+/*
+* This example demonstrates the reception of Riitek packets from ESP32, ESP32S3 and ESP32C3.
+* It is configured to work with the address 02:20:20:86:68 on channel 26 (2426MHz).
+*/
+
 /* Riitek specific constants. */
 #define RIITEK_PREAMBLE                   (0xAA)
 #define RIITEK_CRC16_INIT_VALUE           (0x8b83)

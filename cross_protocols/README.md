@@ -1,6 +1,7 @@
 # Cross protocols artifacts
 
 This artifact includes a minimal cross-protocol library (ESPeranto) as an IDF component, and a set of examples demonstrating its use.
+
 It allows to alter the behaviour of the BLE controller by modifying some structures in exchange memory, to communicate with non natively supported protocol.
 
 The example should be compatible with ESP32, ESP32C3 and ESP32S3.
@@ -19,32 +20,45 @@ The examples provided are the following one:
 
 ## Requirements
 
-You need to install Espressif SDK **in version 4.4**. Follow the guide here:
-[link](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html)
+You need to install Espressif SDK **in version 4.4**. A full complete guide is available [here](https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32/get-started/index.html). 
+
+Once the SDK is configured, clone the repository and go to the cross_protocols folder:
+
+`
+$ git clone https://github.com/RCayre/woot23_espwn32_artifacts
+$ cd woot23_espwn32_artifacts/cross_protocols
+`
+
+You can then build one of the provided example.
 
 ## Build a specific example
 
-* Go to the example directory.
+1. Go to the example directory. For example, if you want to build the **ant\_tx** example:
+
 `
 $ cd ant_tx
 `
 
-Clean the environment:
+2. Clean the environment:
+
 `
 idf.py fullclean
 `
 
-Pick your target (esp32, esp32s3 or esp32c3):
+3. Pick your target (esp32, esp32s3 or esp32c3):
+
 `
 idf.py set-target esp32
 `
 
-Build the example:
+4. Build the example:
+
 `
 idf.py build
 `
 
-Flash it on the board and monitor the output over serial port:
+5. Flash it on the board and monitor the output over serial port:
+
 `
 idf.py flash && idf.py monitor
 `

@@ -4,6 +4,12 @@
 #include "esperanto.h"
 
 
+/*
+* This example demonstrates the simultaneous jamming of Bluetooth Low Energy advertising channels.
+* It only works on ESP32 for now (need some minor fixes to make it work on ESP32S3/ESP32C3.
+*/
+
+
 
 void app_main(void)
 {

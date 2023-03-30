@@ -4,9 +4,12 @@
 #include "hci.h"
 #include "helpers.h"
 
+/* Test modes formats */
 #define LLD_TEST_MODE_RX                    0x1D
 #define LLD_TEST_MODE_TX                    0x1E
 
+
+/* Offsets and indexes in Exchange Memory and Function pointers arrays */
 #ifdef ESP32
 #define TX_LOOP_CALLBACK_INDEX              595
 #define TX_PUSH_CALLBACK_INDEX              598
@@ -129,17 +132,21 @@ typedef struct {
     #endif
 } pkt_header_t;
 
+/* Available datarates (1Mbps or 2Mbps). */
 typedef enum {
     DATARATE_1M = 0,
     DATARATE_2M = 1
 } datarate_t;
 
+
+/* Available radio modes. */
 typedef enum {
     MODE_RX = 0,
     MODE_TX = 1,
     MODE_JAMMER = 2
 } radio_mode_t;
 
+/* Structure storing information about the radio configuration. */
 typedef struct {
     rx_callback_t rx_callback;
     uint32_t sync_word;
@@ -150,6 +157,7 @@ typedef struct {
     bool enabled;
 } radio_config_t;
 
+/* Structure representing a received packet and its metadata. */
 typedef struct {
   uint8_t *packet;
   size_t total_size;
@@ -157,18 +165,28 @@ typedef struct {
   int frequency;
 } rx_packet_t;
 
+
+/* Structure representing a packet to transmit. */
 typedef struct {
   uint8_t *packet;
   size_t size;
 } tx_packet_t;
+
 extern uint8_t *chip7_sleep_params;
 extern void *r_emi_get_mem_addr_by_offset(uint16_t offset);
 
+/* Esperanto Library API */
 void set_frequency(uint32_t frequency);
 void set_sync_word(uint32_t sync_word);
 void set_swapping(bool swapping);
 void set_data_rate(datarate_t datarate);
+void init_radio(rx_callback_t rx_callback);
+void start_radio(radio_mode_t mode);
+void stop_radio();
+void close_radio();
+void transmit_packet(uint8_t* packet, size_t size);
 
+/* Esperanto internals functions */
 #if defined(ESP32S3) || defined(ESP32C3)
 void configure_data_rate(datarate_t datarate);
 #endif
@@ -180,12 +198,4 @@ void configure_sync_word(uint32_t sync);
 void configure_format(uint8_t format);
 void disable_crc_checking();
 
-void init_radio(rx_callback_t rx_callback);
-
-void start_radio(radio_mode_t mode);
-void stop_radio();
-
-void close_radio();
-
-void transmit_packet(uint8_t* packet, size_t size);
 #endif

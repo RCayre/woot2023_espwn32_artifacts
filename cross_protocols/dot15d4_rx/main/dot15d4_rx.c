@@ -3,6 +3,14 @@
 #include "nvs_flash.h"
 #include "esperanto.h"
 
+/*
+* This example demonstrates the reception of 802.15.4 packets from ESP32C3 and ESP32S3.
+* It requires support of LE 2M Physical Layer, so it won't work on ESP32.
+*
+* It uses WazaBee attack to convert MSK symbols to the corresponding OQPSK symbols.
+* By default, it receives packets on channel 12.
+*/
+
 /* 802.15.4 specific constants. */
 #define DOT15D4_RX_PREAMBLE                 (0xa7)
 #define DOT15D4_MATCHING_PATTERN            (0x03f73a9b)
