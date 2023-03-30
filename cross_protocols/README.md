@@ -26,6 +26,7 @@ Once the SDK is configured, clone the repository and go to the cross_protocols f
 
 `
 $ git clone https://github.com/RCayre/woot2023_espwn32_artifacts
+
 $ cd woot2023_espwn32_artifacts/cross_protocols
 `
 
