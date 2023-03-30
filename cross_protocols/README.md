@@ -25,8 +25,8 @@ You need to install Espressif SDK **in version 4.4**. A full complete guide is a
 Once the SDK is configured, clone the repository and go to the cross_protocols folder:
 
 `
-$ git clone https://github.com/RCayre/woot23_espwn32_artifacts
-$ cd woot23_espwn32_artifacts/cross_protocols
+$ git clone https://github.com/RCayre/woot2023_espwn32_artifacts
+$ cd woot2023_espwn32_artifacts/cross_protocols
 `
 
 You can then build one of the provided example.
